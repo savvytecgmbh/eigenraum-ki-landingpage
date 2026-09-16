@@ -1,0 +1,5 @@
+# Entwurfsfassung – bewusst nicht für Suchmaschinen freigegeben.
+# Zum Livegang: dieses Disallow entfernen und das noindex-Meta in allen
+# HTML-Dateien löschen.
+User-agent: *
+Disallow: /

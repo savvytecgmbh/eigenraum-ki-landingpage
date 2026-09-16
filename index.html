@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eigenraum.ki – Die lokale KI-Suite für (DATEV-)Kanzleien</title>
+<meta name="description" content="Eigenraum.ki bündelt KI-Chat, Toolbox und Workflows in einer Arbeitsumgebung für Steuerberater, Wirtschaftsprüfer und Rechtsanwälte – lokal gehostet, DATEV-integriert und berufsrechtlich konform.">
+<meta name="author" content="Eigenraum GmbH">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="format-detection" content="telephone=no">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Eigenraum.ki – Die lokale KI-Suite für (DATEV-)Kanzleien">
+<meta property="og:description" content="Chat, Toolbox und Workflows in einer digitalen Arbeitsumgebung für Kanzleien – vollständig lokal gehostet, DATEV-integriert und rechtssicher.">
+<meta property="og:image" content="assets/img/eigenraum-ki.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/quicksand-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#hauptinhalt">Direkt zum Inhalt</a>
+
+<header class="site-header" id="seitenanfang">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="#seitenanfang" aria-label="Eigenraum.ki – zum Seitenanfang">
+      <img src="assets/img/eigenraum-ki.webp" alt="Eigenraum.ki" width="313" height="80" fetchpriority="high" decoding="async">
+      <span class="site-header__tagline">Die lokale KI-Suite<br>für (DATEV-)Kanzleien</span>
+    </a>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__text">Menü</span>
+    </button>
+
+    <nav class="site-header__nav" id="siteNav" aria-label="Hauptnavigation">
+      <a href="#ausgangslage">Ausgangslage</a>
+      <a href="#loesung">Unsere Lösung</a>
+      <a href="#datenschutz">Rechtssicherheit</a>
+      <a href="#konsortium">Team &amp; Netzwerk</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt" class="site-header__cta site-header__cta--innav">Demo anfragen</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <a href="#kontakt" class="site-header__cta">Demo anfragen</a>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop" hidden></div>
+
+<main id="hauptinhalt">
+
+<section class="hero-suite">
+  <div class="hero-suite__container">
+  <div class="hero-suite__inner">
+    <div class="hero-suite__text">
+      <h1 class="hero-suite__headline">Die KI-Suite, die in Ihrer Kanzlei bleibt.</h1>
+      <p class="hero-suite__lead">Eigenraum.ki bündelt Chat, Toolbox und Workflows in einer digitalen Arbeitsumgebung für Steuerberater, Wirtschaftsprüfer und Rechtsanwälte – vollständig lokal gehostet, DATEV-integriert und rechtssicher.</p>
+      <div class="hero-suite__buttons">
+        <a href="#kontakt" class="hero-suite__cta">Demo anfragen</a>
+        <a href="#loesung" class="hero-suite__cta-secondary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none"/></svg>Wie es funktioniert</a>
+      </div>
+    </div>
+
+    <div class="hero-suite__visual" aria-hidden="true">
+      <div class="hero-suite__frame">
+        <div class="hero-suite__browser-bar"><span></span><span></span><span></span></div>
+        <div class="hero-mock">
+          <div class="hero-mock__sidebar">
+            <div class="hero-mock__brand">
+              <img loading="lazy" decoding="async" width="354" height="130" class="hero-mock__brand-logo" src="assets/img/eigenraum-ki-suite-logo.webp" alt="Eigenraum.ki – Die lokale KI-Suite für (DATEV-)Kanzleien">
+            </div>
+            <button type="button" class="hero-mock__new-chat">&#128172; Neuer Chat</button>
+            <span class="hero-mock__search">&#128269; Chats durchsuchen</span>
+            <nav class="hero-mock__nav">
+              <span class="hero-mock__nav-item">Eigenraum.ki-Toolbox <i>&#8250;</i></span>
+              <span class="hero-mock__nav-item">Eigenraum.ki-Workflows <i>&#8250;</i></span>
+            </nav>
+            <div class="hero-mock__projects">
+              <div class="hero-mock__projects-head"><span>Projekte</span><span class="hero-mock__projects-add">+ Neu</span></div>
+              <span class="hero-mock__nav-item hero-mock__nav-item--sub">&#128196; Belegprüfung <i>&#8250;</i></span>
+            </div>
+            <div class="hero-mock__nav-bottom">
+              <span class="hero-mock__nav-item">&#128218; Prompt-Bibliothek</span>
+              <span class="hero-mock__nav-item">&#128451;&#65039; Datenquellen</span>
+              <span class="hero-mock__nav-item">&#9881;&#65039; Einstellungen</span>
+            </div>
+          </div>
+          <div class="hero-mock__main">
+            <div class="hero-mock__topbar">
+              <div class="hero-mock__topbar-left">
+                <p class="hero-mock__client">Kanzlei Mustermann GmbH</p>
+                <span class="hero-mock__datev">&#9679; DATEV verbunden</span>
+              </div>
+              <div class="hero-mock__user">
+                <span class="hero-mock__bell">&#128276;<span class="hero-mock__badge">3</span></span>
+                <span class="hero-mock__avatar">MR</span>
+                <span class="hero-mock__user-info">Max Raum<br><small>Steuerberater</small></span>
+              </div>
+            </div>
+            <div class="hero-mock__body">
+              <h3 class="hero-mock__greeting">Guten Tag, Max</h3>
+              <p class="hero-mock__subtext">Wie kann der Eigenraum.ki-Assistent dich heute unterstützen?</p>
+              <div class="hero-mock__suggestions">
+                <span class="hero-mock__suggestion">&#128269; Zieh den aktuellen Handelsregister-Auszug der Muster GmbH</span>
+                <span class="hero-mock__suggestion">&#128203; Lege ein neues Mandat für die Muster GmbH an „Jahresabschluss 2025"</span>
+                <span class="hero-mock__suggestion">&#128196; Fasse die wichtigsten Fristen für die Umsatzsteuervoranmeldung zusammen</span>
+                <span class="hero-mock__suggestion">&#127760; Übersetze diesen Absatz ins Englische</span>
+              </div>
+              <div class="hero-mock__input">
+                <span>Stelle deine Frage an den Eigenraum.ki-Assistent …</span>
+                <span class="hero-mock__input-actions">&#128206; &#127908; &#10148;</span>
+              </div>
+              <p class="hero-mock__disclaimer">Demo-System · Keine Rechts- oder Steuerberatung – Ergebnisse müssen fachlich geprüft werden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-suite__grid">
+    <div class="hero-suite__tile">
+      <div class="hero-suite__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>Kompromisslose Datensouveränität</h3>
+      <p>Volle Flexibilität beim Deployment: lokal auf eigenen Servern oder in einem dedizierten, deutschen Rechenzentrum ohne US-Beteiligung – für absolute Immunität gegen den US CLOUD Act.</p>
+    </div>
+    <div class="hero-suite__tile">
+      <div class="hero-suite__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87"/><path d="M9 20H4v-2a4 4 0 0 1 3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Von Kanzleien für Kanzleien</h3>
+      <p>Kein theoretisches IT-Konstrukt: Alle KI-Use-Cases sind von praktizierenden Berufsträgern mitentwickelt, im Kanzleialltag validiert und flexibel auf Ihre Kanzlei zuschneidbar.</p>
+    </div>
+    <div class="hero-suite__tile">
+      <div class="hero-suite__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 4v5"/><path d="M7.5 20a4.5 4.5 0 0 1 9 0"/></svg></div>
+      <h3>Sicheres Kanzlei-Wissen ohne Kontrollverlust</h3>
+      <p>Über RAG und Vektordatenbanken wird Ihr Kanzleiwissen sicher als Basis integriert – Effizienz- und Qualitätsgewinn bei voller physischer Isolation Ihrer Daten, ohne Abfluss zu Trainingszwecken.</p>
+    </div>
+    <div class="hero-suite__tile">
+      <div class="hero-suite__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><path d="M7 10v4a3 3 0 0 0 3 3h4"/><path d="M17 10v7"/></svg></div>
+      <h3>Nahtlose Workspace-Integration</h3>
+      <p>Die KI agiert direkt in Microsoft Word und Excel – ganz ohne Tab-Wechsel, manuelles Kopieren oder ineffiziente Zwischenschritte.</p>
+    </div>
+    <div class="hero-suite__tile">
+      <div class="hero-suite__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></div>
+      <h3>Radikale Konnektivität</h3>
+      <p>Proprietäre Schnittstellen und die smarte Anbindung von Drittanbieter-APIs (z.&nbsp;B. DATEVconnect Gateway) brechen Daten-Silos auf und machen Kanzleiwissen zentral nutzbar.</p>
+    </div>
+    <div class="hero-suite__tile">
+      <div class="hero-suite__tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-3 3 2 4-5"/></svg></div>
+      <h3>Mühelose Skalierbarkeit &amp; Investitionssicherheit</h3>
+      <p>Starten Sie fokussiert in der Steuerberatung und erweitern Sie das Ökosystem mühelos – ob Rechtsberatung, Wirtschaftsprüfung oder HR: Die KI wächst mit Ihrem gesamten Kanzleibetrieb.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="ausgangslage" id="ausgangslage">
+  <div class="ausgangslage__hero">
+    <div class="ausgangslage__intro">
+      <p class="ausgangslage__eyebrow">Ausgangslage</p>
+      <h2 class="ausgangslage__headline">Drei Berufsträgergruppen, ein Dilemma.</h2>
+      <p class="ausgangslage__intro-lead">KI kann Recherche, Schreibarbeit und Dokumentenanalyse spürbar beschleunigen. Im Kanzleialltag von <strong>Steuerberatern</strong>, <strong>Rechtsanwälten</strong> und <strong>Wirtschaftsprüfern</strong> bleibt dieses Potenzial dennoch <strong>ungenutzt</strong> – denn Cloud-KI-Tools wie ChatGPT verarbeiten Daten außerhalb der eigenen Infrastruktur und stehen damit im Konflikt mit <strong>Mandatsgeheimnis, Berufsrecht und DSGVO</strong>.</p>
+    </div>
+
+    <div class="ausgangslage__pain">
+      <p class="ausgangslage__pain-kicker">Ihr Schmerz</p>
+      <h3 class="ausgangslage__pain-title">Datenschutz und Berufsgeheimnis verhindern den produktiven KI-Einsatz im Kanzleialltag.</h3>
+      <ul class="ausgangslage__pain-list">
+        <li>Mandantendaten dürfen keine externen Server erreichen – das schließt ChatGPT &amp; Co. faktisch aus</li>
+        <li>DSGVO, Berufsgeheimnis und AI Act lassen wenig Spielraum für unkontrollierte KI-Experimente</li>
+        <li>Generische KI-Tools kennen weder DATEV noch kanzleispezifische Arbeitsabläufe</li>
+        <li>Steigende Mandatszahlen bei knappem Personal – Routineaufgaben verdrängen Beratungszeit</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="ausgangslage__quote">
+    <svg class="ausgangslage__quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6C4.87 8.09 3.5 10.79 3.5 13.83c0 3.31 2.15 5.67 4.9 5.67 2.24 0 3.9-1.77 3.9-3.95 0-2.03-1.42-3.6-3.32-3.6-.4 0-.78.07-1.02.15.35-2.3 2.32-4.6 4.6-5.85L11.1 4.5C9.68 4.98 8.28 5.36 7.17 6zm10.5 0c-2.3 2.09-3.67 4.79-3.67 7.83 0 3.31 2.15 5.67 4.9 5.67 2.24 0 3.9-1.77 3.9-3.95 0-2.03-1.42-3.6-3.32-3.6-.4 0-.78.07-1.02.15.35-2.3 2.32-4.6 4.6-5.85L21.6 4.5c-1.42.48-2.82.86-3.93 1.5z"/></svg>
+    <div class="ausgangslage__quote-body">
+      <p class="ausgangslage__quote-text">„Der verbreitete Reflex, KI-Projekte wegen DSGVO und AI Act aufzuschieben, führt in die Irre.“</p>
+      <p class="ausgangslage__quote-footer">
+        <span class="ausgangslage__quote-authors">Philipp Jundt &amp; Sarah-Ellen Rakover</span>
+        <span>Geschäftsführung, Kanzlei GHJ &amp; Mitgründer, Eigenraum.ki</span>
+        <span>&middot;</span>
+        <a class="ausgangslage__quote-source" href="https://www.handelsblatt.com/adv/pruefung-und-beratung/ghj-gmbh-wirtschaftspruefungsgesellschaft-rechtsberatungsgesellschaft-ki-mit-datenhoheit-modell-fuer-die-praxis/100231167.html" target="_blank" rel="noopener">Handelsblatt, 08.06.2026 →</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="ausgangslage__bridge">
+    <span>Ob Steuerberater, Wirtschaftsprüfer oder Rechtsanwalt: Die Eigenraum.ki-Suite schafft für alle drei Berufsträgergruppen eine gemeinsame, rechtssichere KI-Basis – lokal, DATEV-integriert und auditierbar.</span>
+  </div>
+</section>
+
+<section class="loesung" id="loesung">
+  <div class="loesung__head">
+    <p class="loesung__kicker">Unsere Lösung</p>
+    <h2 class="loesung__title">Eine KI, die sich an Ihren individuellen Anforderungen ausrichtet und mit Ihnen wächst</h2>
+    <p class="loesung__lead">Von der spontanen Frage bis zum wiederkehrenden Mandatsprozess – die Eigenraum.ki-Suite begleitet Sie genau dort, wo Sie täglich arbeiten: im Chat, in der Toolbox, im Workflow und direkt in Word und Excel.</p>
+  </div>
+
+  <div class="loesung__demo">
+    <div class="role-sticky-bar">
+    <div class="role-avatar" aria-hidden="true">
+      <img loading="lazy" decoding="async" width="300" height="300" src="assets/img/avatar-steuern.webp" alt="" data-avatar="steuern">
+      <img loading="lazy" decoding="async" width="300" height="300" src="assets/img/avatar-recht.webp" alt="" data-avatar="recht">
+      <img loading="lazy" decoding="async" width="300" height="299" src="assets/img/avatar-pruefung.webp" alt="" class="is-active" data-avatar="pruefung">
+    </div>
+
+    <div class="role-switch-wrap">
+      <div class="role-switch" id="roleSwitch" role="group" aria-label="Ansicht nach Berufsgruppe filtern">
+        <button type="button" class="role-switch__btn" aria-pressed="false" data-role="steuern">Für Steuerberater</button>
+        <button type="button" class="role-switch__btn" aria-pressed="false" data-role="recht">Für Rechtsanwälte</button>
+        <button type="button" class="role-switch__btn is-active" aria-pressed="true" data-role="pruefung">Für Wirtschaftsprüfer</button>
+      </div>
+    </div>
+    </div>
+
+    <div class="suite-mega">
+    <div class="suite-mega__header">
+      <img loading="lazy" decoding="async" width="142" height="160" class="suite-mega__watermark" src="assets/img/watermark.webp" alt="">
+      <p class="suite-mega__title"><strong>Eigenraum.ki-Suite</strong> für (DATEV-)Kanzleien</p>
+      <div class="suite-mega__datev-link">
+        <span class="suite-mega__datev-link-badge"><span class="suite-mega__datev-link-dot"></span>DATEV verbunden</span>
+      </div>
+    </div>
+
+    <div class="pillars">
+
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="pillar__title">Eigenraum.ki-Buddy</h3>
+        <span class="pillar__badge">KI-Chat</span>
+        <p class="pillar__desc">Stellen Sie Fragen wie einer erfahrenen Kolleg:in: Der Eigenraum.ki-Buddy versteht den Kanzleikontext und antwortet direkt, präzise und jederzeit verfügbar.</p>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="pillar__title">Eigenraum.ki-Toolbox</h3>
+        <span class="pillar__badge">Alltagshelfer</span>
+        <p class="pillar__desc">Frei nutzbare Werkzeuge für spontane Fragen, Recherche und die alltägliche Schreibarbeit im Kanzleialltag – eine Art Multifunktions-Werkzeug.</p>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4M17.5 10v4M14 17.5h-4M6.5 14v-4"/></svg>
+        </div>
+        <h3 class="pillar__title">Eigenraum.ki-Workflows</h3>
+        <span class="pillar__badge">KI-Automatisierungsplattform</span>
+        <p class="pillar__desc">Automatisierte Unterstützung für wiederkehrende Mandatsprozesse – von der ersten Prüfung bis zum fertigen Entwurf.</p>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20"/><path d="M8 21h8M12 18v3"/></svg>
+        </div>
+        <h3 class="pillar__title">Eigenraum.ki-Office Add-Ins</h3>
+        <span class="pillar__badge">Word &amp; Excel</span>
+        <p class="pillar__desc">Native KI-Einbettung direkt in Ihre primäre Arbeitsumgebung – Medienbrüche werden konsequent vermieden.</p>
+      </div>
+
+    </div>
+
+    <div class="suite-arrows">
+      <div class="suite-arrows__col"></div>
+      <div class="suite-arrows__col">
+        <div class="suite-arrow"><svg viewBox="0 0 100 60"><path d="M0,0 H100 V28 L50,60 L0,28 Z" fill="var(--blue-deep)"/></svg></div>
+      </div>
+      <div class="suite-arrows__col">
+        <div class="suite-arrow"><svg viewBox="0 0 100 60"><path d="M0,0 H100 V28 L50,60 L0,28 Z" fill="var(--blue-deep)"/></svg></div>
+      </div>
+      <div class="suite-arrows__col"></div>
+    </div>
+
+    <div class="suite-split">
+      <div class="suite-split__col">
+        <h3 class="suite-split__title">Tool-Übersicht<sup>1</sup></h3>
+        <div class="suite-split__grid">
+          <div class="usecase-card" data-roles="steuern recht pruefung">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Recherche-Helfer</h4>
+            <p class="usecase-card__desc">Stellen Sie steuerliche und kanzleiinterne Fragen und erhalten Sie fundierte Antworten mit belastbaren Fundstellen zum direkten Nachprüfen.</p>
+            <div class="role-tags"><span class="role-tag steuern">Steuern</span><span class="role-tag recht">Recht</span><span class="role-tag pruefung">Prüfung</span></div>
+          </div>
+          <div class="usecase-card" data-roles="steuern recht pruefung">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Briefvorlagen-Ersteller</h4>
+            <p class="usecase-card__desc">Greifen Sie auf hinterlegte Kanzlei-Briefvorlagen zu und erstellen Sie Mandantenschreiben in Sekunden – mit korrekter Anrede und Formatierung.</p>
+            <div class="role-tags"><span class="role-tag steuern">Steuern</span><span class="role-tag recht">Recht</span><span class="role-tag pruefung">Prüfung</span></div>
+          </div>
+          <div class="usecase-card" data-roles="steuern recht pruefung">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 2.5 15.5 0 18"/><path d="M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Übersetzer DE/EN/FR</h4>
+            <p class="usecase-card__desc">Übersetzen Sie Schriftstücke zwischen Deutsch, Englisch und Französisch – fachsprachlich korrekt, direkt im gewohnten Word-Dokument.</p>
+            <div class="role-tags"><span class="role-tag steuern">Steuern</span><span class="role-tag recht">Recht</span><span class="role-tag pruefung">Prüfung</span></div>
+          </div>
+          <div class="usecase-card" data-roles="steuern recht pruefung">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3"/><path d="M8 22h8"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Diktiergerät</h4>
+            <p class="usecase-card__desc">Diktieren Sie Texte, Notizen oder Tabelleninhalte per Spracheingabe – die KI überträgt sie automatisch in Word oder Excel.</p>
+            <div class="role-tags"><span class="role-tag steuern">Steuern</span><span class="role-tag recht">Recht</span><span class="role-tag pruefung">Prüfung</span></div>
+          </div>
+          <div class="usecase-card" data-roles="steuern recht pruefung">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16v20l-3-2-3 2-3-2-3 2-3-2-1 1V2z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Dokumentenscanner</h4>
+            <p class="usecase-card__desc">Scannen Sie Dokumente ein und übergeben Sie sie automatisch der Wissensbasis – für präzisere Antworten bei Recherche und Assistent.</p>
+            <div class="role-tags"><span class="role-tag steuern">Steuern</span><span class="role-tag recht">Recht</span><span class="role-tag pruefung">Prüfung</span></div>
+          </div>
+          <div class="usecase-card usecase-card--add">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Eigene Tools anlegen</h4>
+            <p class="usecase-card__desc">Legen Sie ein eigenes Werkzeug passend zu den Anforderungen Ihrer Kanzlei an.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="suite-split__col">
+        <h3 class="suite-split__title suite-split__title--right">Workflow-Übersicht (von statisch bis agentisch)<sup>1</sup></h3>
+        <div class="suite-split__grid">
+          <div class="usecase-card" data-roles="recht">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Vertragsprüfung</h4>
+            <p class="usecase-card__desc">Laden Sie einen Vertrag per Drag &amp; Drop hoch: Die KI markiert Risikoklauseln und bewertet sie nach Schweregrad – für eine fundierte erste Einschätzung.</p>
+            <div class="role-tags"><span class="role-tag recht">Recht</span></div>
+          </div>
+          <div class="usecase-card usecase-card--demo" data-roles="pruefung" data-jump-target="usecaseBerichtskritik" role="button" tabindex="0">
+            <span class="usecase-card__sticker">▶ Klick-Demo verfügbar</span>
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Berichtskritik</h4>
+            <p class="usecase-card__desc">Lassen Sie Jahresabschlüsse und Berichte automatisch gegen Ihre kanzleieigenen Checklisten prüfen – für konsistente Qualitätssicherung vor der Freigabe.</p>
+            <div class="role-tags"><span class="role-tag pruefung">Prüfung</span></div>
+          </div>
+          <div class="usecase-card" data-roles="recht">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Vertrags-Entwurf</h4>
+            <p class="usecase-card__desc">Erstellen Sie neue Verträge direkt in Word – auf Basis Ihrer Vorlagen, mit passender Klauselauswahl für den jeweiligen Mandanten.</p>
+            <div class="role-tags"><span class="role-tag recht">Recht</span></div>
+          </div>
+          <div class="usecase-card" data-roles="steuern">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16v20l-3-2-3 2-3-2-3 2-3-2-1 1V2z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Belegprüfung &amp; -aufbereitung</h4>
+            <p class="usecase-card__desc">Scannen oder laden Sie Belege hoch und lassen Sie diese automatisch prüfen, kategorisieren und für die Buchhaltung aufbereiten.</p>
+            <div class="role-tags"><span class="role-tag steuern">Steuern</span></div>
+          </div>
+          <div class="usecase-card usecase-card--add">
+            <div class="usecase-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </div>
+            <h4 class="usecase-card__title">Eigene Workflows anlegen</h4>
+            <p class="usecase-card__desc">Definieren Sie einen individuellen Workflow passend zu den Abläufen Ihrer Kanzlei.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="suite-diagram" role="group" aria-label="Datengrundlage der Suite" tabindex="0">
+    <div class="suite-arrows-row">
+      <div class="suite-arrow-slot">
+        <svg class="suite-source__arrow" viewBox="0 0 24 84" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 80V10"/><path d="M6 18l6-8 6 8"/><path d="M6 72l6 8 6-8"/></svg>
+      </div>
+      <div class="suite-arrow-slot">
+        <svg class="suite-source__arrow" viewBox="0 0 24 84" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 80V6"/><path d="M6 16l6-10 6 10"/></svg>
+      </div>
+      <div class="suite-arrow-slot suite-arrow-slot--gateway">
+        <div class="suite-gateway">
+          <span class="suite-gateway__label">DATEVconnect Gateway (Drittanbieterlösung)</span>
+          <svg class="suite-gateway__connector" viewBox="0 0 24 62" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 58V16"/><path d="M6 24l6-8 6 8"/></svg>
+        </div>
+      </div>
+      <div class="suite-arrow-slot">
+        <svg class="suite-source__arrow" viewBox="0 0 24 84" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 80V6"/><path d="M6 16l6-10 6 10"/></svg>
+      </div>
+      <div class="suite-arrow-slot">
+        <svg class="suite-source__arrow" viewBox="0 0 24 84" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 80V6"/><path d="M6 16l6-10 6 10"/></svg>
+      </div>
+      <div class="suite-arrow-slot">
+        <svg class="suite-source__arrow" viewBox="0 0 24 84" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 80V6"/><path d="M6 16l6-10 6 10"/></svg>
+      </div>
+      <div class="suite-arrow-slot">
+        <svg class="suite-source__arrow" viewBox="0 0 24 84" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 80V6"/><path d="M6 16l6-10 6 10"/></svg>
+      </div>
+    </div>
+
+    <p class="suite-diagram__hint" aria-hidden="true">Datengrundlage der Suite</p>
+    <div class="suite-datasources">
+      <div class="suite-datasources__row">
+        <div class="suite-source">
+          <span class="suite-source__label">Kanzleiinterne Systeme (z.B. E-Mail, Dokumentenablage etc.)</span>
+          <span class="source-tag source-tag--intern">Intern</span>
+        </div>
+        <div class="suite-source">
+          <span class="suite-source__label">Kanzlei-Richtlinien &amp; Checklisten (individuell angereichert)</span>
+          <span class="source-tag source-tag--intern">Intern</span>
+        </div>
+        <div class="suite-source">
+          <span class="suite-source__logo"><img loading="lazy" decoding="async" width="240" height="237" src="assets/img/datev.webp" alt="DATEV"></span>
+          <span class="suite-source__via">via DATEVconnect Gateway (Drittanbieterlösung)</span>
+          <span class="source-tag source-tag--extern">Extern</span>
+        </div>
+        <div class="suite-source">
+          <span class="suite-source__label">Gesetzestexte</span>
+          <span class="source-tag source-tag--extern">Extern</span>
+        </div>
+        <div class="suite-source">
+          <span class="suite-source__label">BMF-Schreiben, Rechtsprechung usw.</span>
+          <span class="source-tag source-tag--extern">Extern</span>
+        </div>
+        <div class="suite-source">
+          <span class="suite-source__label">Weitere Fachquellen</span>
+          <span class="source-tag source-tag--extern">Extern</span>
+        </div>
+      </div>
+      <p class="suite-datasources__caption"><strong>Datengrundlage der Suite</strong> – automatisch synchronisiert, jederzeit vollständig trennbar</p>
+    </div>
+  </div>
+
+  <div class="suite-footnotes">
+    <p class="suite-footnote"><sup>1</sup> Die Übersicht zeigt die von Praktikern – der <strong>Kanzlei GHJ</strong> – für Praktiker entwickelte Use-Case-Bibliothek zum Marktstart. Weitere Use Cases befinden sich bereits in Planung und werden in den nachfolgenden Release-Zyklen sukzessive veröffentlicht.</p>
+  </div>
+
+  <div class="demoflow" id="usecaseBerichtskritik">
+    <div class="demoflow__head">
+      <p class="demoflow__kicker">Funktionsweise an einem konkreten Beispiel</p>
+      <h3 class="demoflow__title">Use Case Berichtskritik: fünf Schritte vom Lagebericht zum geprüften Ergebnis</h3>
+      <p class="demoflow__intro">Formale Vollständigkeitsprüfungen wie die Berichtskritik binden heute wertvolle Prüfungszeit, ohne dass sie das fachliche Urteil ersetzen. Die Eigenraum.ki-Suite übernimmt den systematischen Abgleich gegen die einschlägigen Vorschriften – der Prüfer bleibt für die fachliche Würdigung und das Prüfungsurteil verantwortlich.</p>
+    </div>
+
+    <div class="demoflow__body">
+      <div class="demoflow__steps" id="demoflowSteps">
+        <div class="demoflow__step is-open" data-step="1">
+          <button type="button" class="demoflow__step-head" aria-controls="demostep-1" aria-expanded="true">
+            <span class="demoflow__step-num">1</span>
+            <span class="demoflow__step-title">Lagebericht in Microsoft Word öffnen (oder per Drag &amp; Drop in die Eigenraum.ki-Suite hochladen)</span>
+            <span class="demoflow__step-icon">+</span>
+          </button>
+          <div class="demoflow__step-body" id="demostep-1">
+            <div class="demoflow__step-body-inner">Der Prüfer startet direkt dort, wo er ohnehin arbeitet – im Word-Dokument des Mandanten. Alternativ lässt sich der Lagebericht per Drag &amp; Drop in die Eigenraum.ki-Suite hochladen.</div>
+          </div>
+        </div>
+
+        <div class="demoflow__step" data-step="2">
+          <button type="button" class="demoflow__step-head" aria-controls="demostep-2" aria-expanded="false">
+            <span class="demoflow__step-num">2</span>
+            <span class="demoflow__step-title">Passende Checkliste auswählen</span>
+            <span class="demoflow__step-icon">+</span>
+          </button>
+          <div class="demoflow__step-body" id="demostep-2">
+            <div class="demoflow__step-body-inner">Die Checklisten bilden die einschlägigen Vorschriften (z. B. § 289 HGB, DRS 15/20) ab und können bei Bedarf um kanzleispezifische Prüfungsstandards ergänzt werden.</div>
+          </div>
+        </div>
+
+        <div class="demoflow__step" data-step="3">
+          <button type="button" class="demoflow__step-head" aria-controls="demostep-3" aria-expanded="false">
+            <span class="demoflow__step-num">3</span>
+            <span class="demoflow__step-title">KI-Engine wird angestoßen (deterministischer, nachvollziehbarer Workflow)</span>
+            <span class="demoflow__step-icon">+</span>
+          </button>
+          <div class="demoflow__step-body" id="demostep-3">
+            <div class="demoflow__step-body-inner">Ergebnis: ein strukturierter Prüfungsbericht mit vollständiger Übersicht aller Prüfpunkte inkl. Normverweis und Fundstelle im Dokument (im Beispiel: 32 Prüfpunkte erfüllt von 32 Prüfpunkten zu validieren).</div>
+          </div>
+        </div>
+
+        <div class="demoflow__step" data-step="4">
+          <button type="button" class="demoflow__step-head" aria-controls="demostep-4" aria-expanded="false">
+            <span class="demoflow__step-num">4</span>
+            <span class="demoflow__step-title">Der Prüfer geht jeden Prüfpunkt einzeln durch und bestätigt ihn fachlich</span>
+            <span class="demoflow__step-icon">+</span>
+          </button>
+          <div class="demoflow__step-body" id="demostep-4">
+            <div class="demoflow__step-body-inner">Feststellungen können bei Bedarf direkt „als Kommentar einfügen" hinzugefügt werden – die Nachweisführung bleibt lückenlos dokumentiert.</div>
+          </div>
+        </div>
+
+        <div class="demoflow__step" data-step="5">
+          <button type="button" class="demoflow__step-head" aria-controls="demostep-5" aria-expanded="false">
+            <span class="demoflow__step-num">5</span>
+            <span class="demoflow__step-title">Berichtskritik abgeschlossen</span>
+            <span class="demoflow__step-icon">+</span>
+          </button>
+          <div class="demoflow__step-body" id="demostep-5">
+            <div class="demoflow__step-body-inner">Die Kommunikation an den Mandanten wird auf Basis der Ergebnisse automatisch als E-Mail-Entwurf erstellt und auf Wunsch per Knopfdruck nach Outlook übergeben.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demoflow__visual" id="demoflowVisual">
+        <div class="demoflow__diagram">
+          <div class="demoflow__diagram-topbar">
+            <span class="demoflow__diagram-appname">Microsoft Word</span>
+            <span class="demoflow__diagram-modul">Add-in Modul</span>
+          </div>
+
+          <div class="demoflow__diagram-body">
+            <div class="demoflow__diagram-doc">
+              <span class="demoflow__badge" aria-hidden="true" data-hotspot="1">1</span>
+              <p class="demoflow__diagram-doc-title">Lagebericht <br>der Muster <br>Unternehmen <br>Muster-Fabrik <br>GmbH 2025</p>
+              <div class="demoflow__diagram-doc-lines"><span></span><span></span><span></span><span></span></div>
+            </div>
+
+            <div class="demoflow__diagram-app">
+              <div class="demoflow__diagram-app-header">
+                <span class="demoflow__diagram-app-dot"></span>
+                <span class="demoflow__diagram-app-name">Eigenraum.ki (Word)</span>
+              </div>
+              <div class="demoflow__diagram-app-tabs">
+                <span class="is-active">Berichtskritik</span><span>Schreiben</span><span>Chat</span>
+              </div>
+
+              <div class="demoflow__diagram-app-field">
+                <span class="demoflow__diagram-app-label">Checkliste</span>
+                <div class="demoflow__diagram-app-select">
+                  <span>Lagebericht — Berichtsgrundsätze &amp; Pflichtangaben (§ 289 HGB / DRS 15)</span>
+                  <span class="demoflow__diagram-app-chevron">⌄</span>
+                  <span class="demoflow__badge" aria-hidden="true" data-hotspot="2">2</span>
+                </div>
+              </div>
+
+              <div class="demoflow__diagram-action">
+                <button type="button" class="demoflow__diagram-btn">🔍 Prüfung starten</button>
+                <span class="demoflow__badge demoflow__badge--inline" aria-hidden="true" data-hotspot="3">3</span>
+              </div>
+
+              <div class="demoflow__diagram-app-card">
+                <p class="demoflow__diagram-app-question">Steht der Lagebericht in Einklang mit dem Jahresabschluss und den bei der Prüfung gewonnenen Erkenntnissen?</p>
+                <div class="demoflow__diagram-app-tags"><span class="tag tag--ok">erfüllt</span><span class="tag tag--ref">§ 317 Abs. 2 Satz 1 HGB</span></div>
+                <p class="demoflow__diagram-app-quote">„Das Jahr 2024 war geprägt von Verbesserungen in der Produktion und der Arbeitsproduktivität."</p>
+              </div>
+
+              <div class="demoflow__diagram-app-card demoflow__diagram-app-card--compact">
+                <span class="demoflow__badge" aria-hidden="true" data-hotspot="4">4</span>
+                <p class="demoflow__diagram-app-question">Entspricht der Lagebericht neben gesetzlichen Vorschriften evtl. ergänzenden gesellschaftsvertraglichen Bestimmungen?</p>
+                <div class="demoflow__diagram-app-tags"><span class="tag tag--ok">erfüllt</span><span class="tag tag--ref">DRS 15</span></div>
+                <span class="demoflow__diagram-app-comment">💬 Als Kommentar einfügen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="demoflow__diagram-done">
+            <span class="demoflow__diagram-check demoflow__diagram-check--ok">✓</span>
+            <span class="demoflow__diagram-done-text">Prüfung abgeschlossen</span>
+            <span class="demoflow__badge demoflow__badge--inline" aria-hidden="true" data-hotspot="5">5</span>
+            <button type="button" class="demoflow__diagram-btn demoflow__diagram-btn--outline">✉️ Mail-Entwurf erstellen und in Outlook öffnen</button>
+          </div>
+        </div>
+        <p class="demoflow__visual-caption">Eigenraum.ki-Suite als Add-in in Microsoft Word (schematische Darstellung)</p>
+      </div>
+    </div>
+
+    <div class="demoflow__benefits">
+      <p class="demoflow__benefits-title">Nutzen für die Prüfungspraxis</p>
+      <ul class="demoflow__benefit-list">
+        <li class="demoflow__benefit"><span class="demoflow__benefit-check">✓</span><span><strong>Human-in-the-Loop-Ansatz:</strong> Das Prüfungsurteil trifft weiterhin der Berufsträger – die KI ersetzt den Prüfer nicht, sondern übernimmt den formalen Abgleich, damit er sich auf die fachlich kritischen Punkte konzentrieren kann.</span></li>
+        <li class="demoflow__benefit"><span class="demoflow__benefit-check">✓</span><span><strong>Signifikante Effizienzsteigerung:</strong> Deutliche Reduktion der Zeit für formale Vollständigkeitsprüfungen bei gleichbleibender Prüfungsqualität.</span></li>
+        <li class="demoflow__benefit"><span class="demoflow__benefit-check">✓</span><span><strong>Lückenlose Dokumentation:</strong> Jeder Prüfpunkt ist mit Normverweis und Fundstelle nachvollziehbar belegt – ideal für die Nachweisführung in der Prüfungsakte.</span></li>
+        <li class="demoflow__benefit"><span class="demoflow__benefit-check">✓</span><span><strong>100 % deterministisch:</strong> Reproduzierbare, konsistente Ergebnisse statt variierender manueller Prüftiefe.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="datenschutz" id="datenschutz">
+  <div class="datenschutz__inner">
+    <p class="datenschutz__kicker">Rechtssicherheit</p>
+    <h2 class="datenschutz__title">Datenschutz ist bei uns kein Zusatz, sondern das Fundament unserer „KI-Architektur".</h2>
+    <p class="datenschutz__lead">§ 203 StGB und § 62a StBerG (bzw. § 50a WPO und § 43e BRAO) binden nicht nur den ersten Auftragsverarbeiter, sondern jede Station der Verarbeitungskette. Unsere Antwort darauf: eine lückenlos zertifizierte, rein deutsche Infrastruktur.</p>
+
+    <div class="datenschutz__grid">
+      <div class="datenschutz__card">
+        <h3 class="datenschutz__card-title">§ 203 StGB und § 62a StBerG</h3>
+        <p class="datenschutz__card-desc">Die gesamte Verarbeitungskette unterliegt der strafbewehrten Verschwiegenheitspflicht und den Berufspflichten aller drei Berufsträgergruppen (§ 62a StBerG, § 50a WPO, § 43e BRAO).</p>
+      </div>
+      <div class="datenschutz__card">
+        <h3 class="datenschutz__card-title">DSGVO-by Design</h3>
+        <p class="datenschutz__card-desc">Verarbeitung ausschließlich nach europäischem Datenschutzrecht.</p>
+      </div>
+      <div class="datenschutz__card datenschutz__card--highlight">
+        <h3 class="datenschutz__card-title">Private AI-Infrastruktur (TÜV-zertifiziert)</h3>
+        <p class="datenschutz__card-desc">Für maximale Datensicherheit und berufsrechtliche Konformität ohne Kompromisse setzen wir auf den TÜV-zertifizierten Rechenzentrumsverbund der Q-FOX® Gruppe mit eigenem Security Operations Center (SOC).</p>
+      </div>
+      <div class="datenschutz__card">
+        <h3 class="datenschutz__card-title">Kein Training</h3>
+        <p class="datenschutz__card-desc">Die Modelle laufen als lokal gehostete LLMs auf unserer eigenen Server-Infrastruktur, lokal gehostet durch die Q-FOX® Gruppe, und senden keinerlei Daten an Hersteller oder ins Internet zurück. Ein Training mit Mandantendaten ist damit technisch ausgeschlossen.</p>
+      </div>
+    </div>
+
+    <p class="datenschutz__note">Hinweis: Der US-amerikanische CLOUD Act betrifft uns nicht – wir arbeiten ausschließlich mit europäischen Anbietern ohne US-Mutterkonzern und ohne US-Geschäft.</p>
+  </div>
+</section>
+
+<section class="konsortium" id="konsortium">
+  <div class="konsortium__head">
+    <p class="konsortium__kicker">Team &amp; Netzwerk</p>
+    <h2 class="konsortium__title">Als komplementäres Power-Team die rechtssichere KI-Transformation im Kanzleiumfeld nachhaltig vorantreiben</h2>
+    <p class="konsortium__lead">Gemeinsam stärker – Ein strategisches Netzwerk aus vier führenden Spezialisten, das tiefes Domänenwissen mit kompromissloser Datensicherheit und technologischer Exzellenz verbindet. Für Sie bedeutet das: Maximale Effizienz im Kanzleialltag bei 100&nbsp;% digitaler Souveränität.</p>
+  </div>
+
+  <div class="partners">
+
+    <div class="partner">
+      <div class="partner__logo"><img loading="lazy" decoding="async" width="195" height="61" src="assets/img/kanzlei-ghj.webp" alt="Kanzlei GHJ"></div>
+      <span class="partner__role">Der Anwendungspartner</span>
+      <p class="partner__desc">Als eine der führenden mittelständigen Kanzleien aus Steuerberatern, Wirtschaftsprüfern und Rechtsanwälten Deutschlands im KI-Anwendungsbereich garantiert sie die absolute Praxisnähe der Lösung. Entwickelt „von Praktikern für Praktiker“ – exakt ausgerichtet auf die realen Prozesse und Qualitätsstandards Ihrer Kanzlei.</p>
+      <a class="partner__link" href="https://www.g-h-j.de/" target="_blank" rel="noopener">Website besuchen ↗</a>
+    </div>
+
+    <div class="partner">
+      <div class="partner__logo"><img loading="lazy" decoding="async" width="312" height="66" src="assets/img/savvytec.webp" alt="savvytec"></div>
+      <span class="partner__role">Der Software-Backbone</span>
+      <p class="partner__desc">Bringt langjährige Expertise in daten- und KI-gestützten Plattformen ein. Sie verantwortet das technologische Fundament sowie eine lückenlose KI-Governance.</p>
+      <a class="partner__link" href="https://savvytec.de" target="_blank" rel="noopener">Website besuchen ↗</a>
+    </div>
+
+    <div class="partner partner--self">
+      <div class="partner__logo"><img loading="lazy" decoding="async" width="315" height="79" src="assets/img/eigenraum-ki-2.webp" alt="Eigenraum.ki"></div>
+      <span class="partner__role">Das KI- und Innovation-Powerhouse</span>
+      <p class="partner__desc">Sorgt mit Startup-Agilität für die schnelle Bereitstellung domänenspezifischer Automatisierungslösungen im Kanzleiumfeld. Das Ziel: Spürbare Entlastung Ihres Teams von Routineaufgaben und sofortige Effizienzgewinne.</p>
+      <button type="button" class="team-toggle" id="teamToggleBtn" aria-expanded="false" aria-controls="kernteam">
+        <span class="team-toggle__label">Team anzeigen</span>
+        <svg class="team-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="partner">
+      <div class="partner__logo"><img loading="lazy" decoding="async" width="338" height="65" src="assets/img/q-fox-gruppe.webp" alt="Q-FOX Gruppe"></div>
+      <span class="partner__role">Der „Private-AI“-Infrastrukturgeber<br>(DSGVO-konform)</span>
+      <p class="partner__desc">Gewährleistet als Private-AI-Infrastrukturgeber und TÜV-zertifizierter Rechenzentrumsverbund mit eigenem Security Operations Center (SOC) mit einer vollständig deutschen Gesellschafterstruktur das höchste Schutzniveau für Ihre sensiblen Mandantendaten. Maximale Datensicherheit und berufsrechtliche Konformität ohne Kompromisse.</p>
+      <a class="partner__link" href="https://www.qfox.de/" target="_blank" rel="noopener">Website besuchen ↗</a>
+    </div>
+
+  </div>
+
+  <div class="kernteam" id="kernteam">
+    <div class="kernteam__inner">
+    <h3 class="kernteam__title">Das <strong>Eigenraum<span class="brand-ki">.ki</span></strong> Kernteam</h3>
+    <div class="kernteam__grid">
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><img loading="lazy" decoding="async" width="160" height="160" src="assets/img/dr-thomas-spanuth.webp" alt="Dr. Thomas Spanuth" class="kernteam__photo-img"></div>
+        <h4 class="kernteam__name">Dr. Thomas Spanuth</h4>
+        <span class="kernteam__role">CEO</span>
+        <p class="kernteam__desc">Steuert Strategie, Produkt und Unternehmensaufbau.</p>
+      </div>
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><img loading="lazy" decoding="async" width="160" height="160" src="assets/img/amine-belakaria.webp" alt="Amine Belakaria" class="kernteam__photo-img"></div>
+        <h4 class="kernteam__name">Amine Belakaria</h4>
+        <span class="kernteam__role">Lead Developer</span>
+        <p class="kernteam__desc">Verantwortet technische Architektur und Entwicklung; steuert Umsetzung der spezifizierten KI-Use-Cases.</p>
+      </div>
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
+        <h4 class="kernteam__name">Erik Hartmann</h4>
+        <span class="kernteam__role">Head of Sales</span>
+        <p class="kernteam__desc">Treibt Vermarktung, Kooperationen und Vertriebsaufbau.</p>
+      </div>
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
+        <h4 class="kernteam__name">Gianluca Weber</h4>
+        <span class="kernteam__role">Head of Product Management &amp; Enablement</span>
+        <p class="kernteam__desc">Verantwortet Produkt-Roadmap und Priorisierung; übersetzt Kanzlei-Anforderungen in Produktspezifikation; verantwortet Enablement der Kunden.</p>
+      </div>
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><img loading="lazy" decoding="async" width="160" height="160" src="assets/img/wilhelm-schoening.webp" alt="Wilhelm Schöning" class="kernteam__photo-img"></div>
+        <h4 class="kernteam__name">Wilhelm Schöning</h4>
+        <span class="kernteam__role">CFO</span>
+        <p class="kernteam__desc">Lenkt Finanzen und Controlling.</p>
+      </div>
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><img loading="lazy" decoding="async" width="160" height="160" src="assets/img/daniel-pudelko.webp" alt="Daniel Pudelko" class="kernteam__photo-img"></div>
+        <h4 class="kernteam__name">Daniel Pudelko</h4>
+        <span class="kernteam__role">Technischer Berater – KI und Daten</span>
+        <p class="kernteam__desc">CTO bei savvytec. Verbindet angewandte Forschung mit Hardware- und Softwareentwicklung.</p>
+      </div>
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><img loading="lazy" decoding="async" width="160" height="160" src="assets/img/philipp-jundt.webp" alt="Philipp Jundt" class="kernteam__photo-img"></div>
+        <h4 class="kernteam__name">Philipp Jundt</h4>
+        <span class="kernteam__role">Fachlicher Berater – Steuern &amp; Wirtschaftsprüfung</span>
+        <p class="kernteam__desc">Geschäftsführer bei Kanzlei GHJ. Bringt fachliche Praxiserfahrung aus Steuerberatung/WP ein; validiert Use Cases und Workflows auf Praxistauglichkeit.</p>
+      </div>
+      <div class="kernteam__member">
+        <div class="kernteam__photo"><img loading="lazy" decoding="async" width="160" height="160" src="assets/img/sarah-ellen-rakover.webp" alt="Sarah-Ellen Rakover" class="kernteam__photo-img"></div>
+        <h4 class="kernteam__name">Sarah-Ellen Rakover</h4>
+        <span class="kernteam__role">Fachliche Beraterin – Rechtswesen &amp; Datenschutz</span>
+        <p class="kernteam__desc">Geschäftsführer bei Kanzlei GHJ. Berät zu Datenschutz- und Berufsrecht (u.&nbsp;a. § 203 StGB, § 57 StBerG); begleitet regulatorische Freigaben.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq__head">
+    <p class="faq__kicker">Häufige Fragen</p>
+    <h2 class="faq__title">Antworten auf die wichtigsten Fragen zur Eigenraum.ki-Suite</h2>
+    <p class="faq__lead">Kurz und klar erklärt – von Datensouveränität über Berufsrecht bis Preismodell.</p>
+  </div>
+
+  <div class="faq__list">
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+        <span>Was ist die Eigenraum.ki-Suite genau?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+        <div class="faq__answer-inner">
+          <p>Die Eigenraum.ki-Suite ist eine digitale Arbeitsumgebung mit KI-Chat, Toolbox und Workflows, die speziell für Steuerberater, Wirtschaftsprüfer und Rechtsanwälte entwickelt wurde. Sie läuft vollständig lokal auf souveräner deutscher Infrastruktur und ist direkt in DATEV sowie Microsoft Word, Excel und Outlook integriert.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+        <span>Wo werden meine Daten gespeichert – und verlassen sie die Kanzlei?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+        <div class="faq__answer-inner">
+          <p>Deine Daten bleiben in Deutschland und laufen zu keinem Zeitpunkt über US-Server. Du entscheidest, ob die Suite lokal bei dir oder in einem dedizierten, DSGVO-konformen deutschen Rechenzentrum gehostet wird – ganz ohne Zugriffsmöglichkeit durch den US CLOUD Act.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+        <span>Worin unterscheidet sich Eigenraum.ki von ChatGPT oder anderen Cloud-KI-Tools?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+        <div class="faq__answer-inner">
+          <p>Cloud-KI-Tools verarbeiten deine Mandantendaten außerhalb deiner eigenen Infrastruktur – das steht im Konflikt mit Mandatsgeheimnis, Berufsrecht und DSGVO. Eigenraum.ki läuft komplett in deinem Kontrollbereich, nutzt Open-Source-Sprachmodelle ohne externe API-Aufrufe und erfüllt damit die berufsrechtlichen Vorgaben (u.&nbsp;a. §&nbsp;203 StGB, §&nbsp;57 StBerG, §&nbsp;63a StBerG).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+        <span>Ist die Nutzung mit meinem Berufsrecht vereinbar?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+        <div class="faq__answer-inner">
+          <p>Ja. Genau das war der Ausgangspunkt der Entwicklung: Durch die vollständig lokale Verarbeitung entsteht keine Weitergabe von Mandanteninformationen an Dritte, wie es bei Cloud-Diensten der Fall wäre.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+        <span>Wie ist die Suite in DATEV eingebunden?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+        <div class="faq__answer-inner">
+          <p>Die Eigenraum.ki-Suite ist nativ an DATEV angebunden, sodass du direkt mit deinen bestehenden Mandats- und Dokumentendaten arbeiten kannst, ohne Medienbrüche oder manuellen Export.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+        <span>Welche Funktionen stehen mir konkret zur Verfügung?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+        <div class="faq__answer-inner">
+          <p>Drei Bausteine: der KI-Chat für spontane Fragen, die Toolbox mit fünf Werkzeugen (u.&nbsp;a. Recherche-Helfer, Übersetzer, Dokumentenscanner) und die Workflows für wiederkehrende Prozesse wie Berichtskritik, Vertragsprüfung oder Belegprüfung – alle direkt nutzbar in Word, Excel und Outlook.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+        <span>Für welche Berufsgruppen ist die Suite gedacht?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
+        <div class="faq__answer-inner">
+          <p>Für Steuerberater, Wirtschaftsprüfer und Rechtsanwälte gleichermaßen – jede Berufsgruppe hat eigene, passgenaue Workflows und Ansichten, während die zugrunde liegende KI-Basis dieselbe rechtssichere Infrastruktur nutzt.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+        <span>Was kostet die Eigenraum.ki-Suite?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a8" role="region" aria-labelledby="faq-q8">
+        <div class="faq__answer-inner">
+          <p>Da die Modelle lokal gehostet werden, fallen keine separaten Token-Kosten pro Anfrage an – die Nutzung ist über eine transparente Hosting-Pauschale abgedeckt. Das genaue Preismodell richtet sich nach Kanzleigröße und Deployment-Variante und wird im persönlichen Erstgespräch besprochen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
+        <span>Wie aufwendig ist die Einführung in meiner Kanzlei?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a9" role="region" aria-labelledby="faq-q9">
+        <div class="faq__answer-inner">
+          <p>Die Suite lässt sich flexibel deployen – lokal auf euren eigenen Servern oder in einem dedizierten Rechenzentrum. Ein Erstgespräch klärt Infrastruktur, DATEV-Anbindung und den passenden Rollout-Zeitplan für dein Team.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">
+        <span>Wie kann ich die Suite unverbindlich kennenlernen?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer" id="faq-a10" role="region" aria-labelledby="faq-q10">
+        <div class="faq__answer-inner">
+          <p>Über den Button „Demo anfragen" oben auf der Seite – wir melden uns zeitnah für einen persönlichen Termin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="kontakt" id="kontakt">
+  <div class="footer__top">
+    <h2 class="footer__title">Eigenraum.ki in Ihrer Kanzlei erleben.</h2>
+    <p class="footer__lead">In einem persönlichen Termin zeigen wir Ihnen die Suite an Ihren Fragestellungen – und klären Infrastruktur, DATEV-Anbindung und Rollout für Ihr Team.</p>
+    <a class="footer__cta" href="mailto:kontakt@eigenraum.ki?subject=Demoanfrage%20Eigenraum.ki-Suite">Demo anfragen</a>
+    <p class="footer__cta-note">Oder schreiben Sie uns direkt: <a href="mailto:kontakt@eigenraum.ki">kontakt@eigenraum.ki</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <hr class="footer__divider">
+  <div class="footer__bottom">
+    <div class="footer__brand">
+      <span class="footer__logo-plate"><img src="assets/img/eigenraum-ki.webp" alt="Eigenraum.ki" width="313" height="80" loading="lazy" decoding="async"></span>
+    </div>
+    <nav class="footer__nav" aria-label="Fußzeilen-Navigation">
+      <a href="#ausgangslage">Ausgangslage</a>
+      <a href="#loesung">Unsere Lösung</a>
+      <a href="#datenschutz">Rechtssicherheit</a>
+      <a href="#konsortium">Team &amp; Netzwerk</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="footer__legal">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="footer__meta">
+    <span class="footer__meta-contact"><a href="mailto:kontakt@eigenraum.ki" class="footer__meta-link"><strong>kontakt@eigenraum.ki</strong></a> · Hubert-Burda-Platz 2, 77652 Offenburg · © 2026 Eigenraum GmbH</span>
+  </div>
+</footer>
+
+<button type="button" class="to-top" id="backToTopBtn" aria-label="Zurück zum Seitenanfang">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
