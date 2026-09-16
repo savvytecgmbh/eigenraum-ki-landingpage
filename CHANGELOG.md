@@ -3,6 +3,21 @@
 Alle nennenswerten Änderungen an der Eigenraum.ki-Landingpage.
 Format nach [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [1.0.3] – 2026-09-16
+
+### Behoben
+
+- **Aktualisierte Dateien kamen bis zu zehn Minuten lang nicht an.** GitHub Pages
+  liefert alles mit `cache-control: max-age=600` aus. Nach einem Deploy konnte
+  der Browser deshalb neues HTML mit altem Skript kombinieren – die Seite sah
+  dann aktuell aus, verhielt sich aber wie vorher. Genau das trat beim Prüfen
+  der 1.0.2-Fassung auf: Der Server hatte die neue Datei (gleiche Prüfsumme wie
+  lokal), im Browser lief trotzdem die alte.
+
+  `styles.css` und `main.js` werden nun mit `?v=<Version>` eingebunden.
+  **Diese Nummer bei jeder Änderung mitziehen** – sie entspricht dem obersten
+  Eintrag in dieser Datei.
+
 ## [1.0.2] – 2026-09-16
 
 ### Behoben

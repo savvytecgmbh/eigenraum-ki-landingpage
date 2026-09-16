@@ -20,6 +20,12 @@ robots.txt            Sperrt Suchmaschinen aus (Entwurfsfassung)
 ```
 
 Kein Build-Schritt, keine Abhängigkeiten: die Dateien werden direkt ausgeliefert.
+
+**Beim Ändern von `styles.css` oder `main.js` die Versionsnummer mitziehen.**
+Beide werden in den HTML-Dateien als `?v=1.0.3` eingebunden. GitHub Pages
+liefert alles mit `max-age=600` aus; ohne neue Nummer sehen Besucher bis zu
+zehn Minuten lang die alte Fassung – oder, schlimmer, neues HTML mit altem
+Skript. Die Nummer entspricht dem obersten Eintrag im CHANGELOG.
 Zum lokalen Ansehen genügt
 
 ```bash
