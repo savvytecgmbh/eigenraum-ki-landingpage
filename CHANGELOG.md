@@ -3,6 +3,48 @@
 Alle nennenswerten Änderungen an der Eigenraum.ki-Landingpage.
 Format nach [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [1.0.1] – 2026-09-16
+
+### Behoben
+
+- **Kein einziger Sprunglink funktionierte** – weder die Navigation noch die
+  „Demo anfragen"-Schaltflächen noch „Wie es funktioniert". Am iPhone tat ein
+  Antippen schlicht nichts.
+
+  Ursache war `html { scroll-behavior: smooth }` aus der Entwurfsfassung: Die
+  Seite ist rund 19 Bildschirmhöhen lang, und über solche Distanzen führen
+  Browser die weiche Bewegung teilweise gar nicht aus. Das Sprungziel wird dann
+  nie erreicht. Verschärft wurde es dadurch, dass das Skript zusätzlich
+  `preventDefault()` aufrief – damit entfiel auch das native Springen des
+  Browsers als Rückfallebene, und der Link war endgültig wirkungslos.
+
+  Nachgewiesen im Browser: Mit `behavior: 'smooth'` blieb `scrollY` auf 0, mit
+  `behavior: 'instant'` sprang die Seite korrekt auf 12837. Zu beachten ist,
+  dass `behavior: 'auto'` **nicht** „sofort" bedeutet, sondern „nimm den
+  CSS-Wert" – also ebenfalls smooth.
+
+  Sämtliche Sprünge laufen jetzt über eine Funktion `springeZu()` und erfolgen
+  sofort, mit eigener Berechnung des Abstands zum Kopfbereich.
+
+- **Das Menü konnte unsichtbar bleiben, obwohl es als geöffnet galt.**
+  `visibility` wurde mitanimiert; hängt oder unterbleibt die Animation, bleibt
+  der Wert auf `hidden`. Es wird jetzt hart geschaltet, animiert werden nur noch
+  Deckkraft und Verschiebung.
+
+- **Ohne JavaScript war die Navigation unerreichbar.** Die Menüpunkte lagen in
+  einem Panel, das sich nur per Skript öffnen ließ. Die Panel-Darstellung hängt
+  jetzt an einer `js`-Klasse; fehlt sie, steht die Navigation als normale Zeile
+  unter dem Logo.
+
+### Geprüft
+
+- Alle sechs Navigationsziele, beide Hero-Schaltflächen, die Klick-Demo-Karte
+  und „Zurück nach oben" – bei 393 px (Burger-Menü) und 1440 px (Desktop).
+  Jeder Abschnitt landet exakt unter dem Kopfbereich.
+- Externe Verweise und die Verweise auf Impressum, Datenschutz und AGB werden
+  nicht abgefangen, sondern laufen nativ.
+- Weiterhin kein seitliches Scrollen auf allen acht geprüften Gerätebreiten.
+
 ## [1.0.0] – 2026-09-16
 
 Überarbeitung der Entwurfsfassung `Eigenraum-ki_landing-page_komplett_vENTWURF.html`

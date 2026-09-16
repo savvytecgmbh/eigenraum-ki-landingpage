@@ -5,6 +5,11 @@
 (function () {
   'use strict';
 
+  // Markiert, dass JavaScript läuft. Ohne diese Klasse zeigt das Stylesheet
+  // die Navigation als normale Liste, statt sie in ein Panel zu legen,
+  // das sich ohne JavaScript nicht öffnen ließe.
+  document.documentElement.classList.add('js');
+
   /* ---------------------------------------------------------------------------
      Header-Höhe als CSS-Variable bereitstellen
      Sie steuert scroll-margin-top der Abschnitte und die Position des Menüs.
@@ -54,6 +59,37 @@
       });
     }, 120);
   });
+
+  /* ---------------------------------------------------------------------------
+     Zu einem Abschnitt springen
+
+     Bewusst ohne weiche Bewegung. Die Seite ist rund 19 Bildschirmhöhen
+     lang; über solche Distanzen führen Browser ein smooth-Scrolling teils
+     gar nicht aus. Dann bewegt sich überhaupt nichts und jeder Link wirkt
+     tot – genau dieser Fehler trat auf dem iPhone auf. Ein sofortiger
+     Sprung ist das Standardverhalten des Webs und funktioniert überall.
+     --------------------------------------------------------------------------- */
+  function springeZu(ziel) {
+    var y = (typeof ziel === 'number')
+      ? ziel
+      : Math.round(ziel.getBoundingClientRect().top + window.pageYOffset
+                   - ((headerEl ? headerEl.offsetHeight : 0) + 18));
+    if (y < 0) y = 0;
+
+    var start = window.pageYOffset;
+    if (Math.abs(y - start) < 2) return;
+
+    try {
+      // 'instant' erzwingt den Sprung; 'auto' würde den CSS-Wert verwenden.
+      window.scrollTo({ top: y, behavior: 'instant' });
+    } catch (e) {
+      // Ältere Browser kennen die Objektform nicht
+      window.scrollTo(0, y);
+    }
+
+    // Sicherheitsnetz, falls der Sprung dennoch ausbleibt
+    if (Math.abs(window.pageYOffset - start) < 4) window.scrollTo(0, y);
+  }
 
   /* ---------------------------------------------------------------------------
      Mobile Navigation
@@ -117,7 +153,7 @@
     if (!btn) return;
 
     btn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      springeZu(0);
     });
 
     var sichtbar = false;
@@ -186,7 +222,7 @@
     Array.prototype.forEach.call(jumpCards, function (card) {
       function jump() {
         var target = document.getElementById(card.getAttribute('data-jump-target'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (target) springeZu(target);
       }
       card.addEventListener('click', jump);
       card.addEventListener('keydown', function (e) {
@@ -228,7 +264,9 @@
       btn.setAttribute('aria-expanded', offen ? 'true' : 'false');
       if (label) label.textContent = offen ? 'Team ausblenden' : 'Team anzeigen';
       klappe(panel, offen);
-      if (offen) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (offen && panel.getBoundingClientRect().top > window.innerHeight * 0.7) {
+        springeZu(panel);
+      }
     });
   })();
 
@@ -302,7 +340,7 @@
       var target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      springeZu(target);
       if (linkById[id]) setActive(id);
       if (history.replaceState) history.replaceState(null, '', '#' + id);
     });

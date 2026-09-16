@@ -38,9 +38,12 @@
   #usecaseBerichtskritik{
     scroll-margin-top:calc(var(--header-h) + 18px);
   }
-  html{
-    scroll-behavior:smooth;
-  }
+  /* Bewusst KEIN globales scroll-behavior:smooth.
+     Die Seite ist rund 19 Bildschirmhöhen lang. Über eine solche Distanz
+     führen Browser die weiche Bewegung teils gar nicht erst aus – das
+     Sprungziel wird nie erreicht und jeder Link wirkt tot.
+     main.js entscheidet stattdessen nach Distanz: kurze Wege weich,
+     weite Wege sofort. Ohne JavaScript springt der Browser nativ. */
 
   *{box-sizing:border-box;}
 
@@ -3012,13 +3015,14 @@ button:focus-visible,
     height:42px;
   }
 
-  .nav-toggle{
+  .js .nav-toggle{
     display:inline-flex;
     flex:none;
   }
 
-  /* Das Menü klappt als Panel direkt unter dem Header auf. */
-  .site-header__nav{
+  /* Das Menü klappt als Panel direkt unter dem Header auf – nur wenn
+     JavaScript läuft, sonst bliebe die Navigation unerreichbar. */
+  .js .site-header__nav{
     position:absolute;
     top:100%;
     left:0;
@@ -3038,9 +3042,11 @@ button:focus-visible,
     opacity:0;
     visibility:hidden;
     transform:translateY(-10px);
-    transition:opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+    /* visibility bewusst nicht mitanimiert: hängt die Animation, bliebe das
+       Menü unsichtbar, obwohl es als geöffnet gilt. */
+    transition:opacity 0.22s ease, transform 0.22s ease;
   }
-  .site-header__nav.is-open{
+  .js .site-header__nav.is-open{
     opacity:1;
     visibility:visible;
     transform:none;
@@ -3065,8 +3071,21 @@ button:focus-visible,
     color:var(--magenta);
   }
 
+  /* Ohne JavaScript: Navigation als normale Zeile unter dem Logo */
+  html:not(.js) .site-header__inner{
+    flex-wrap:wrap;
+  }
+  html:not(.js) .site-header__nav{
+    order:3;
+    width:100%;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:8px 18px;
+    padding-top:10px;
+  }
+
   /* Desktop-CTA weicht dem CTA im Panel */
-  .site-header__actions{
+  .js .site-header__actions{
     display:none;
   }
   .site-header__cta--innav{
