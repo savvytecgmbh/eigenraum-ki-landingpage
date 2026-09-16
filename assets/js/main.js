@@ -101,7 +101,7 @@
     if (!toggle || !nav) return;
 
     function istMobil() {
-      return window.matchMedia('(max-width: 900px)').matches;
+      return window.matchMedia('(max-width: 1000px)').matches;
     }
 
     function setNav(offen) {
@@ -220,9 +220,19 @@
   (function () {
     var jumpCards = document.querySelectorAll('[data-jump-target]');
     Array.prototype.forEach.call(jumpCards, function (card) {
+      var ankunftTimer = null;
       function jump() {
         var target = document.getElementById(card.getAttribute('data-jump-target'));
-        if (target) springeZu(target);
+        if (!target) return;
+        springeZu(target);
+        // Kurzes Ankunftssignal, damit klar ist, wohin der Sprung geführt hat
+        clearTimeout(ankunftTimer);
+        target.classList.remove('is-angekommen');
+        void target.offsetWidth;
+        target.classList.add('is-angekommen');
+        ankunftTimer = setTimeout(function () {
+          target.classList.remove('is-angekommen');
+        }, 1800);
       }
       card.addEventListener('click', jump);
       card.addEventListener('keydown', function (e) {

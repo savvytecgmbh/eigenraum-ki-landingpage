@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/quicksand-latin.woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=1.0.3">
+<link rel="stylesheet" href="assets/css/styles.css?v=1.1.0">
 </head>
 <body>
 
@@ -222,9 +222,9 @@
         <button type="button" class="role-switch__btn" aria-pressed="false" data-role="recht">Für Rechtsanwälte</button>
         <button type="button" class="role-switch__btn is-active" aria-pressed="true" data-role="pruefung">Für Wirtschaftsprüfer</button>
       </div>
-      <p class="role-hinweis" id="roleHinweis" aria-live="polite"></p>
     </div>
     </div>
+    <p class="role-hinweis" id="roleHinweis" aria-live="polite"></p>
 
     <div class="suite-mega">
     <div class="suite-mega__header">
@@ -275,20 +275,22 @@
 
     </div>
 
-    <div class="suite-arrows">
-      <div class="suite-arrows__col"></div>
-      <div class="suite-arrows__col">
-        <div class="suite-arrow"><svg viewBox="0 0 100 60"><path d="M0,0 H100 V28 L50,60 L0,28 Z" fill="var(--blue-deep)"/></svg></div>
+    <!-- Verbindungslinien: von der Toolbox-Säule zur Tool-Übersicht,
+         von der Workflows-Säule zur Workflow-Übersicht. Die Säulen stehen in
+         vier Spalten (Mitten bei 37,5 % und 62,5 %), die Listen darunter in
+         zwei (Mitten bei 25 % und 75 %) – daher der Knick. -->
+    <div class="suite-connect" aria-hidden="true">
+      <div class="suite-connect__col">
+        <svg viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M77 0 V18 H50 V40" vector-effect="non-scaling-stroke"/></svg>
       </div>
-      <div class="suite-arrows__col">
-        <div class="suite-arrow"><svg viewBox="0 0 100 60"><path d="M0,0 H100 V28 L50,60 L0,28 Z" fill="var(--blue-deep)"/></svg></div>
+      <div class="suite-connect__col">
+        <svg viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M23 0 V18 H50 V40" vector-effect="non-scaling-stroke"/></svg>
       </div>
-      <div class="suite-arrows__col"></div>
     </div>
 
     <div class="suite-split">
       <div class="suite-split__col">
-        <h3 class="suite-split__title">Tool-Übersicht<sup>1</sup></h3>
+        <h3 class="suite-split__title"><span class="suite-split__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span>Tool-Übersicht<sup>1</sup></span></h3>
         <div class="suite-split__grid">
           <div class="usecase-card" data-roles="steuern recht pruefung">
             <div class="usecase-card__icon">
@@ -341,7 +343,7 @@
       </div>
 
       <div class="suite-split__col">
-        <h3 class="suite-split__title suite-split__title--right">Workflow-Übersicht (von statisch bis agentisch)<sup>1</sup></h3>
+        <h3 class="suite-split__title suite-split__title--right"><span class="suite-split__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4M17.5 10v4M14 17.5h-4M6.5 14v-4"/></svg></span><span>Workflow-Übersicht (von statisch bis agentisch)<sup>1</sup></span></h3>
         <div class="suite-split__grid">
           <div class="usecase-card" data-roles="recht">
             <div class="usecase-card__icon">
@@ -750,7 +752,7 @@
       </button>
       <div class="faq__answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
         <div class="faq__answer-inner">
-          <p>Deine Daten bleiben in Deutschland und laufen zu keinem Zeitpunkt über US-Server. Du entscheidest, ob die Suite lokal bei dir oder in einem dedizierten, DSGVO-konformen deutschen Rechenzentrum gehostet wird – ganz ohne Zugriffsmöglichkeit durch den US CLOUD Act.</p>
+          <p>Ihre Daten bleiben in Deutschland und laufen zu keinem Zeitpunkt über US-Server. Sie entscheiden, ob die Suite lokal bei Ihnen oder in einem dedizierten, DSGVO-konformen deutschen Rechenzentrum gehostet wird – ganz ohne Zugriffsmöglichkeit durch den US CLOUD Act.</p>
         </div>
       </div>
     </div>
@@ -762,7 +764,7 @@
       </button>
       <div class="faq__answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
         <div class="faq__answer-inner">
-          <p>Cloud-KI-Tools verarbeiten deine Mandantendaten außerhalb deiner eigenen Infrastruktur – das steht im Konflikt mit Mandatsgeheimnis, Berufsrecht und DSGVO. Eigenraum.ki läuft komplett in deinem Kontrollbereich, nutzt Open-Source-Sprachmodelle ohne externe API-Aufrufe und erfüllt damit die berufsrechtlichen Vorgaben (u.&nbsp;a. §&nbsp;203 StGB, §&nbsp;57 StBerG, §&nbsp;63a StBerG).</p>
+          <p>Cloud-KI-Tools verarbeiten Ihre Mandantendaten außerhalb Ihrer eigenen Infrastruktur – das steht im Konflikt mit Mandatsgeheimnis, Berufsrecht und DSGVO. Eigenraum.ki läuft komplett in Ihrem Kontrollbereich, nutzt Open-Source-Sprachmodelle ohne externe API-Aufrufe und erfüllt damit die berufsrechtlichen Vorgaben (u.&nbsp;a. §&nbsp;203 StGB, §&nbsp;57 StBerG, §&nbsp;63a StBerG).</p>
         </div>
       </div>
     </div>
@@ -786,7 +788,7 @@
       </button>
       <div class="faq__answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
         <div class="faq__answer-inner">
-          <p>Die Eigenraum.ki-Suite ist nativ an DATEV angebunden, sodass du direkt mit deinen bestehenden Mandats- und Dokumentendaten arbeiten kannst, ohne Medienbrüche oder manuellen Export.</p>
+          <p>Die Eigenraum.ki-Suite ist nativ an DATEV angebunden, sodass Sie direkt mit Ihren bestehenden Mandats- und Dokumentendaten arbeiten können, ohne Medienbrüche oder manuellen Export.</p>
         </div>
       </div>
     </div>
@@ -834,7 +836,7 @@
       </button>
       <div class="faq__answer" id="faq-a9" role="region" aria-labelledby="faq-q9">
         <div class="faq__answer-inner">
-          <p>Die Suite lässt sich flexibel deployen – lokal auf euren eigenen Servern oder in einem dedizierten Rechenzentrum. Ein Erstgespräch klärt Infrastruktur, DATEV-Anbindung und den passenden Rollout-Zeitplan für dein Team.</p>
+          <p>Die Suite lässt sich flexibel deployen – lokal auf Ihren eigenen Servern oder in einem dedizierten Rechenzentrum. Ein Erstgespräch klärt Infrastruktur, DATEV-Anbindung und den passenden Rollout-Zeitplan für Ihr Team.</p>
         </div>
       </div>
     </div>
@@ -892,6 +894,6 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="assets/js/main.js?v=1.0.3" defer></script>
+<script src="assets/js/main.js?v=1.1.0" defer></script>
 </body>
 </html>

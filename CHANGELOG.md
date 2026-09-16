@@ -3,6 +3,69 @@
 Alle nennenswerten Änderungen an der Eigenraum.ki-Landingpage.
 Format nach [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [1.1.0] – 2026-09-17
+
+Vier Befunde aus dem Praxistest, dazu drei weitere aus dem eigenen Durchgang.
+
+### Behoben
+
+- **Rückmeldezeile lag auf dem „DATEV verbunden"-Etikett.** Die Zeile aus 1.0.2
+  saß in der klebenden Leiste; beim Scrollen schwebt die Leiste über dem Inhalt,
+  und Text ohne Hintergrund landete mitten auf dem Etikett. Die Zeile steht jetzt
+  unterhalb der Leiste im normalen Fluss – die weiße Pille darf schweben, der
+  Text nicht.
+
+- **Zwei verwaiste Pfeile unter den Säulen.** Sie sollten sagen: „Die Toolbox
+  und die Workflows werden unten aufgeschlüsselt" – standen aber unverbunden im
+  Raum, weil die Säulen in vier Spalten stehen (Mitten 37,5 / 62,5 %), die Listen
+  darunter in zwei (25 / 75 %). Jetzt führen Verbindungslinien mit Knick von der
+  Säule zum jeweiligen Listentitel, und beide Titel tragen das Symbol ihrer Säule.
+  Die Linien erscheinen nur, solange die Säulen vierspaltig stehen (> 980 px).
+
+- **Word-Schaubild am Telefon.** Dokument und Add-in wurden untereinander
+  gestapelt; das ergibt ein anderes Bild als Word mit seitlichem Aufgabenbereich.
+  Beide bleiben jetzt auf jeder Breite nebeneinander – das Dokument schmal, das
+  Add-in in Mockup-Schriftgröße.
+
+- **Karten versprachen einen Klick, dem nichts folgte.** Säulen und Werkzeugkarten
+  hoben sich beim Überfahren an, waren aber reine Beschreibungen. Der Effekt
+  bleibt nur auf der Karte, die tatsächlich etwas tut (Klick-Demo). Zu Modalen
+  siehe unten.
+
+- **Kopfbereich zwischen 901 und 999 px zweizeilig.** Die Desktop-Navigation
+  braucht rund 1000 px; darunter rutschte „Demo anfragen" unter das Logo. Die
+  Burger-Navigation greift jetzt ab 1000 px (statt 900). iPad quer mit 1024 px
+  bleibt Desktop.
+
+- **Anrede uneinheitlich.** Vier FAQ-Antworten duzten („Deine Daten bleiben …",
+  „lokal auf euren Servern"), der Rest der Seite siezt. Auf Sie-Form vereinheitlicht.
+  Unverändert bleibt das Produkt-Mockup im Hero („Stelle deine Frage …") – das
+  ist Oberfläche der Suite, nicht Ansprache des Besuchers.
+
+### Neu
+
+- **Ankunftssignal nach dem Sprung von der Klick-Demo-Karte:** Ein
+  magentafarbener Balken wächst am Kopf des Demoflow-Abschnitts auf und zieht
+  sich zurück – „hier geht es weiter". Vorher wirkte der Sprung wie ein bloßes
+  Herunterscrollen.
+
+### Entscheidung: keine Modale für die Werkzeugkarten
+
+Die Karten enthalten bereits ihren gesamten Inhalt (Titel, zwei Sätze,
+Berufsgruppen). Ein Modal würde denselben Text noch einmal zeigen – ein Klick,
+der nichts Neues bringt. Sobald es pro Werkzeug mehr gibt (Screenshot, Ablauf in
+drei Schritten, Beispiel-Prompt), lohnt sich die Modal-Hülle; sie ist dann in
+einer Stunde gebaut.
+
+### Geprüft
+
+- Desktop 1180 px: Leiste angeheftet ohne Überlappung, Linien enden über den
+  Titeln, Ankunftsbalken (ohne Transition gemessen: scaleX 0 → 1).
+- Telefon 393 px: Word-Schaubild 101 + 226 px nebeneinander; Schalter, Hinweis,
+  FAQ, Kontakt, Footer.
+- 905 / 640 px: Kopfbereich einzeilig bzw. Burger, Säulen 2×2, Linien aus.
+- Nach der Änderung nur noch Hover-Regeln auf `.usecase-card--demo`.
+
 ## [1.0.3] – 2026-09-16
 
 ### Behoben

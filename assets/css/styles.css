@@ -845,12 +845,8 @@
     position:relative;
     transition:transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   }
-  .pillar:hover{
-    transform:translateY(-5px);
-    box-shadow:0 14px 28px rgba(21,34,51,0.14);
-    background:#F0B9D6;
-    z-index:1;
-  }
+  /* Kein Hover-Effekt: Die Säulen sind Beschreibungen, keine Schaltflächen.
+     Ein Anheben verspräche einen Klick, dem nichts folgt. */
 
   .pillar__icon{
     width:40px;
@@ -860,9 +856,6 @@
     justify-content:center;
     color:var(--blue);
     transition:transform 0.25s ease;
-  }
-  .pillar:hover .pillar__icon{
-    transform:scale(1.12);
   }
   .pillar__icon svg{
     width:26px;
@@ -1709,7 +1702,9 @@
     transition:opacity 0.2s ease, filter 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
 
-  .usecase-card:not(.is-muted):hover{
+  /* Angehoben wird nur die Karte, die tatsächlich etwas tut (Klick-Demo).
+     Die übrigen sind Beschreibungen und sollen keinen Klick versprechen. */
+  .usecase-card--demo:not(.is-muted):hover{
     transform:translateY(-5px);
     box-shadow:0 14px 28px rgba(21,34,51,0.12);
     border-color:var(--blue);
@@ -1732,7 +1727,7 @@
     color:var(--blue);
     transition:transform 0.25s ease, background 0.25s ease;
   }
-  .usecase-card:not(.is-muted):hover .usecase-card__icon{
+  .usecase-card--demo:not(.is-muted):hover .usecase-card__icon{
     transform:scale(1.1);
     background:#DCE6F5;
   }
@@ -1881,17 +1876,18 @@
 
   .role-switch-wrap{
     display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-    margin-bottom:28px;
+    justify-content:center;
+    margin-bottom:12px;
   }
 
-  /* Rückmeldung direkt am Schalter: Die gefilterten Karten liegen am Telefon
+  /* Rückmeldung unter dem Schalter: Die gefilterten Karten liegen am Telefon
      rund anderthalb Bildschirmhöhen tiefer – ohne diese Zeile wirkt ein
-     Umschalten wie ein Klick ins Leere. */
+     Umschalten wie ein Klick ins Leere.
+     Bewusst NICHT in der klebenden Leiste: Beim Scrollen schwebt die Leiste
+     über dem Inhalt, und ein Text ohne Hintergrund läge dann mitten auf dem
+     „DATEV verbunden"-Etikett. Die weiße Pille darf schweben, der Text nicht. */
   .role-hinweis{
-    margin:0;
+    margin:0 0 26px;
     font-family:var(--font);
     font-weight:600;
     font-size:13px;
@@ -2015,19 +2011,38 @@
     margin-bottom:0;
   }
 
-  .suite-arrows{
+  /* Verbindungslinien Säule -> Liste. Gleiches Raster wie .suite-split, damit
+     die Linien genau über den Listentiteln enden. */
+  .suite-connect{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    padding:0 4px;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    height:40px;
+    margin-top:-1px;
   }
-  .suite-arrows__col{
-    display:flex;
-    justify-content:center;
+  .suite-connect__col{
+    position:relative;
   }
-  .suite-arrow svg{
-    width:64px;
-    height:34px;
+  .suite-connect__col svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
     display:block;
+    fill:none;
+    stroke:var(--blue-deep);
+    stroke-width:2;
+  }
+  /* Pfeilspitze am unteren Ende, mittig über dem Titel */
+  .suite-connect__col::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    border-top:8px solid var(--blue-deep);
   }
 
   .suite-split{
@@ -2047,15 +2062,34 @@
   }
 
   .suite-split__title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     font-family:var(--font);
     font-weight:700;
     font-size:19px;
     letter-spacing:-0.005em;
     color:var(--ink);
-    margin:0 0 16px;
+    margin:8px 0 16px;
+    text-align:center;
   }
-  .suite-split__title--right{
-    text-align:right;
+  /* Symbol der Säule, aus der die Liste hervorgeht – so schließt sich der
+     Bogen von „Eigenraum.ki-Toolbox" zu „Tool-Übersicht" auch ohne Linie. */
+  .suite-split__icon{
+    flex:none;
+    width:32px;
+    height:32px;
+    border-radius:9px;
+    background:#FFFFFF;
+    color:var(--blue);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .suite-split__icon svg{
+    width:18px;
+    height:18px;
   }
 
   .suite-split__grid{
@@ -2072,7 +2106,6 @@
     @media (max-width: 760px){
       .suite-mega__watermark{display:none;}
     }
-    .suite-arrows{display:none;}
     .suite-split{grid-template-columns:1fr; gap:40px;}
     .suite-split::before{display:none;}
     .suite-split__grid{grid-template-columns:1fr 1fr;}
@@ -2692,7 +2725,7 @@
    RESPONSIVE-LAYER
    Breakpoints:
      1100px  kleine Laptops, iPad Pro 12.9" quer
-      900px  iPad quer (1024) bis iPad hoch (768/820)  -> ab hier Burger-Menü
+     1000px  unterhalb iPad quer (1024)                -> ab hier Burger-Menü
       700px  große Smartphones quer, kleine Tablets
       560px  iPhone hoch (390–430)
       400px  iPhone SE / mini (320–375)
@@ -2784,25 +2817,12 @@ button:focus-visible,
    Auf Touchscreens bleibt ein :hover sonst nach dem Antippen "kleben".
    -------------------------------------------------------------------------- */
 @media (hover: none){
-  .pillar:hover,
-  .usecase-card:not(.is-muted):hover{
+  .usecase-card--demo:not(.is-muted):hover{
     transform:none;
     box-shadow:none;
   }
-  .pillar:hover{
-    background:#F3C7DF;
-  }
-  .usecase-card:not(.is-muted):hover{
-    border-color:var(--line);
-  }
-  .usecase-card--demo:not(.is-muted):hover{
-    border-color:var(--magenta);
-  }
-  .pillar:hover .pillar__icon,
-  .usecase-card:not(.is-muted):hover .usecase-card__icon{
+  .usecase-card--demo:not(.is-muted):hover .usecase-card__icon{
     transform:none;
-  }
-  .usecase-card:not(.is-muted):hover .usecase-card__icon{
     background:#EDF1F8;
   }
 }
@@ -2991,7 +3011,7 @@ button:focus-visible,
 /* ==========================================================================
    BREAKPOINT 1100px – kleine Laptops und iPad Pro quer
    ========================================================================== */
-@media (min-width: 901px) and (max-width: 1100px){
+@media (min-width: 1001px) and (max-width: 1100px){
   .hero-suite__inner{
     grid-template-columns:330px 1fr;
     gap:28px;
@@ -3019,9 +3039,11 @@ button:focus-visible,
 }
 
 /* ==========================================================================
-   BREAKPOINT 900px – ab hier mobile Navigation (iPad hoch und kleiner)
+   BREAKPOINT 1000px – ab hier mobile Navigation
+   Die Desktop-Navigation (Logo, fünf Punkte, Schaltfläche) braucht rund
+   1000 px; darunter bricht sie in zwei Zeilen. iPad quer (1024) bleibt Desktop.
    ========================================================================== */
-@media (max-width: 900px){
+@media (max-width: 1000px){
 
   /* ---- Header ---------------------------------------------------------- */
   .site-header__inner{
@@ -3191,7 +3213,7 @@ button:focus-visible,
 }
 
 /* Nur im Tabletbereich: unterhalb 560px gilt die knappere Vorgabe des Grundlayouts */
-@media (min-width: 561px) and (max-width: 900px){
+@media (min-width: 561px) and (max-width: 1000px){
   .hero-suite{
     padding:44px 0 44px;
   }
@@ -3298,8 +3320,7 @@ button:focus-visible,
   }
   .suite-split__title{
     font-size:17px;
-  }
-  .suite-split__title--right{
+    justify-content:flex-start;
     text-align:left;
   }
   .suite-datasources__row{
@@ -3311,21 +3332,36 @@ button:focus-visible,
     padding:16px 16px 18px;
     border-radius:16px;
   }
+  /* Dokument links, Add-in rechts – auch am Telefon. Das Schaubild zeigt
+     Word mit seitlichem Aufgabenbereich; untereinander gestapelt wäre es
+     ein anderes Bild. Dafür wird das Dokument schmal und die Schrift im
+     Add-in bleibt auf Mockup-Größe. */
   .demoflow__diagram-body{
-    grid-template-columns:1fr;
-    gap:14px;
+    grid-template-columns:minmax(76px, 0.5fr) 1fr;
+    gap:10px;
   }
   .demoflow__diagram-doc{
-    padding:16px 14px;
+    padding:14px 8px;
   }
   .demoflow__diagram-doc-title{
-    font-size:14px;
-  }
-  .demoflow__diagram-doc-title br{
-    display:none;
+    font-size:11.5px;
+    line-height:1.3;
+    margin-bottom:10px;
   }
   .demoflow__diagram-doc-lines{
-    width:60%;
+    width:72%;
+  }
+  .demoflow__diagram-app{
+    padding:10px 9px 11px;
+    gap:7px;
+  }
+  .demoflow__diagram-app-tabs{
+    gap:10px;
+    font-size:11px;
+  }
+  .demoflow__diagram-app-select{
+    font-size:10.5px;
+    padding:7px 8px;
   }
   /* Nummernpunkte dürfen nicht über den Kartenrand hinausragen */
   .demoflow__diagram-doc .demoflow__badge,
@@ -3344,17 +3380,17 @@ button:focus-visible,
     font-size:12.5px;
   }
   .demoflow__diagram-app-question{
-    font-size:12.5px;
+    font-size:11.5px;
   }
   .demoflow__diagram-app-quote{
-    font-size:11.5px;
+    font-size:10.5px;
   }
   .demoflow__diagram-done{
     justify-content:flex-start;
   }
   .demoflow__diagram-btn{
-    font-size:12px;
-    padding:11px 14px;
+    font-size:11px;
+    padding:9px 11px;
     text-align:left;
   }
 
@@ -3513,7 +3549,7 @@ button:focus-visible,
     min-height:46px;
     font-size:14.5px;
   }
-  .role-switch-wrap{
+  .role-hinweis{
     margin-bottom:22px;
   }
 
@@ -3718,6 +3754,46 @@ button:focus-visible,
     font-size:11px;
     color:#555;
   }
+}
+
+/* ==========================================================================
+   Nachträge 1.1.0
+   ========================================================================== */
+
+/* Verbindungslinien nur, solange die Säulen in vier Spalten stehen */
+@media (max-width: 980px){
+  .suite-connect{display:none;}
+  .suite-split__title{margin-top:0;}
+}
+
+/* Ankunftssignal nach dem Sprung von der Klick-Demo-Karte: ein magentafarbener
+   Balken wächst am Kopf des Abschnitts auf und zieht sich wieder zurück –
+   „hier geht es weiter". */
+.demoflow{
+  position:relative;
+}
+.demoflow::before{
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:0;
+  right:0;
+  height:3px;
+  background:var(--magenta);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform 0.7s ease;
+}
+.demoflow.is-angekommen::before{
+  transform:scaleX(1);
+}
+
+/* Sehr schmale Telefone: Schaubild noch etwas dichter */
+@media (max-width: 400px){
+  .demoflow__diagram{padding:12px 10px 14px;}
+  .demoflow__diagram-body{grid-template-columns:minmax(66px, 0.45fr) 1fr; gap:8px;}
+  .demoflow__diagram-doc{padding:12px 6px;}
+  .demoflow__diagram-doc-title{font-size:10.5px;}
 }
 
 /* ==========================================================================
