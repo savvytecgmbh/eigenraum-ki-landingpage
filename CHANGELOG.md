@@ -3,6 +3,36 @@
 Alle nennenswerten Änderungen an der Eigenraum.ki-Landingpage.
 Format nach [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [1.0.2] – 2026-09-16
+
+### Behoben
+
+- **Der Berufsgruppen-Schalter wirkte wie tot.** Ein Tippen auf „Für Rechtsanwälte"
+  färbte zwar die Schaltfläche, sonst schien nichts zu geschehen. Der Filter
+  arbeitete korrekt – nur liegen die Karten, die er hervorhebt, am Telefon
+  **1412 px weiter unten**, also rund anderthalb Bildschirmhöhen außerhalb des
+  Sichtfelds.
+
+  Unter dem Schalter steht nun eine Zeile, die sich bei jedem Umschalten sichtbar
+  ändert und sagt, wo die Wirkung eintritt: „In der Übersicht unten hervorgehoben:
+  5 Werkzeuge und 2 Workflows für Rechtsanwälte". Sie ist mit `aria-live`
+  ausgezeichnet, wird also auch vorgelesen.
+
+  Bewusst **kein** automatischer Sprung zu den Karten: ein unerwarteter Satz über
+  1400 px reißt den Schalter aus dem Bild und desorientiert mehr, als er hilft.
+
+- **Das Wasserzeichen überlappte den Titel.** Auf schmalen Schirmen lief die
+  zweizeilige Überschrift „Eigenraum.ki-Suite für (DATEV-)Kanzleien" unter das
+  Logo in der Ecke. Unterhalb 760 px wird es ausgeblendet – es ist reine Zierde,
+  das Logo steht ohnehin im Kopfbereich.
+
+### Geprüft
+
+- Alle drei Berufsgruppen durchgeschaltet: Die Rückmeldung ändert sich jedes Mal
+  (1 bzw. 2 Workflows), die Seite springt dabei nicht.
+- 320, 393, 744 und 1440 px: kein seitliches Scrollen, kein Überstand,
+  Navigation trifft.
+
 ## [1.0.1] – 2026-09-16
 
 ### Behoben

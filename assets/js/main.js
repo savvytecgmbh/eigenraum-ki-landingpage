@@ -280,6 +280,27 @@
     var buttons = Array.prototype.slice.call(switchEl.querySelectorAll('.role-switch__btn'));
     var cards = Array.prototype.slice.call(document.querySelectorAll('.usecase-card[data-roles]'));
     var avatars = Array.prototype.slice.call(document.querySelectorAll('.role-avatar img[data-avatar]'));
+    var hinweis = document.getElementById('roleHinweis');
+    var spalten = Array.prototype.slice.call(document.querySelectorAll('.suite-split__col'));
+
+    function zaehleHervorgehoben(spalte) {
+      if (!spalte) return 0;
+      return Array.prototype.slice.call(spalte.querySelectorAll('.usecase-card[data-roles]'))
+        .filter(function (c) { return !c.classList.contains('is-muted'); }).length;
+    }
+
+    // Die gefilterten Karten liegen am Telefon rund anderthalb Bildschirmhöhen
+    // tiefer. Ohne eine Rückmeldung direkt am Schalter wirkt das Umschalten
+    // wie ein Klick ins Leere.
+    function zeigeRueckmeldung(btn) {
+      if (!hinweis) return;
+      var rolle = (btn.textContent || '').replace(/^Für\s+/, '').trim();
+      var werkzeuge = zaehleHervorgehoben(spalten[0]);
+      var ablaeufe = zaehleHervorgehoben(spalten[1]);
+      hinweis.innerHTML = 'In der Übersicht unten hervorgehoben: <strong>' +
+        werkzeuge + (werkzeuge === 1 ? ' Werkzeug' : ' Werkzeuge') + '</strong> und <strong>' +
+        ablaeufe + (ablaeufe === 1 ? ' Workflow' : ' Workflows') + '</strong> für ' + rolle;
+    }
 
     function applyFilter(role) {
       cards.forEach(function (card) {
@@ -289,11 +310,15 @@
       avatars.forEach(function (img) {
         img.classList.toggle('is-active', img.getAttribute('data-avatar') === role);
       });
+
+      var aktiverKnopf = null;
       buttons.forEach(function (b) {
         var aktiv = b.getAttribute('data-role') === role;
         b.classList.toggle('is-active', aktiv);
         b.setAttribute('aria-pressed', aktiv ? 'true' : 'false');
+        if (aktiv) aktiverKnopf = b;
       });
+      if (aktiverKnopf) zeigeRueckmeldung(aktiverKnopf);
     }
 
     buttons.forEach(function (btn) {

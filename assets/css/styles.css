@@ -1881,8 +1881,27 @@
 
   .role-switch-wrap{
     display:flex;
-    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
     margin-bottom:28px;
+  }
+
+  /* Rückmeldung direkt am Schalter: Die gefilterten Karten liegen am Telefon
+     rund anderthalb Bildschirmhöhen tiefer – ohne diese Zeile wirkt ein
+     Umschalten wie ein Klick ins Leere. */
+  .role-hinweis{
+    margin:0;
+    font-family:var(--font);
+    font-weight:600;
+    font-size:13px;
+    line-height:1.45;
+    color:var(--slate);
+    text-align:center;
+    min-height:19px;
+  }
+  .role-hinweis strong{
+    color:var(--blue-deep);
   }
 
   .role-switch{
@@ -2048,6 +2067,11 @@
   @media (max-width: 900px){
     .suite-mega{padding:28px 20px 32px;}
     .suite-mega__watermark{width:26px; height:26px; top:14px; right:16px; opacity:0.7;}
+    /* Unter 760px lief der zweizeilige Titel unter das Wasserzeichen.
+       Es ist reine Zierde – das Logo steht ohnehin im Kopfbereich. */
+    @media (max-width: 760px){
+      .suite-mega__watermark{display:none;}
+    }
     .suite-arrows{display:none;}
     .suite-split{grid-template-columns:1fr; gap:40px;}
     .suite-split::before{display:none;}
